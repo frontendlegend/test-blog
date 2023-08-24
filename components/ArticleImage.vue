@@ -1,7 +1,7 @@
 <template lang="pug">
 div(class="article-image-block") 
   img(:src="src")
-  caption(v-text="caption")
+  span(:class="caption", v-text="caption")
 </template>
 
 <script setup lang="ts">
@@ -21,7 +21,7 @@ div(class="article-image-block")
       border-radius: 2px 220px 2px 2px;
     }
 
-    caption {
+    .caption {
       display: block;
       width: fit-content;
       margin-left: auto;
