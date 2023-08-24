@@ -1,20 +1,22 @@
 <template>
   <NuxtLayout name="main">
     <div class="article">
-      <ArticleIntro 
-        v-if="articleIntroBlock"
-        :data="(articleIntroBlock.data as ArticleIntroDataT)"
-      />
+      <div class="article-block" v-for="block in pageContent?.body">
+        <ArticleIntro 
+          v-if="block.type === PageBodyTypes.article_intro_block"
+          :data="(block.data as ArticleIntroDataT)"
+        />
 
-      <ArticleText 
-        v-if="articleTextBlock"
-        :data="(articleTextBlock.data as ArticleTextDataT)"
-      />
+        <ArticleText 
+          v-if="block.type === PageBodyTypes.text_block"
+          :data="(block.data as ArticleTextDataT)"
+        />
 
-      <ArticleImage 
-        v-if="articleImageBlock"
-        :data="(articleImageBlock.data as ArticleImageDataT)"
-      />
+        <ArticleImage 
+          v-if="block.type === PageBodyTypes.image_block"
+          :data="(block.data as ArticleImageDataT)"
+        />
+      </div>
     </div>
   </NuxtLayout>
 </template>
@@ -33,18 +35,6 @@
 
   const { data: pageContent } = 
     await useFetch<PageT>(`https://devtwit8.ru/api/v1/page/?path=/${article}`)
-
-  const articleIntroBlock = pageContent.value?.body.find(block => {
-    return block.type === PageBodyTypes.article_intro_block
-  })
-
-  const articleTextBlock = pageContent.value?.body.find(block => {
-    return block.type === PageBodyTypes.text_block
-  })
-
-  const articleImageBlock = pageContent.value?.body.find(block => {
-    return block.type === PageBodyTypes.image_block
-  })
 
   useSeoMeta({ 
     title: pageContent.value?.meta.title,
