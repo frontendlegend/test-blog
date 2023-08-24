@@ -1,6 +1,7 @@
 <template lang="pug">
 div(class="article-image-block") 
-  img(:src="src" :alt="caption")
+  img(:src="src")
+  caption(v-text="caption")
 </template>
 
 <script setup lang="ts">
@@ -18,6 +19,15 @@ div(class="article-image-block")
       height: 100%;
       max-height: 550px;
       border-radius: 2px 220px 2px 2px;
+    }
+
+    caption {
+      display: block;
+      width: fit-content;
+      margin-left: auto;
+      font-size: 14px;
+      color: $gray;
+      white-space: nowrap;
     }
   }
 </style>
