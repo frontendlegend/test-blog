@@ -12,7 +12,7 @@
 
     <footer class="footer">
       <div class="container">
-        <div class="subscribe" />
+        <SubscribeForm />
       </div>
     </footer>
   </div>

@@ -9,4 +9,5 @@
 
 @mixin media1280 { @media (max-width: 1280px) { @content; }}
 @mixin media1024 { @media (max-width: 1024px) { @content; }}
+@mixin media768 { @media (max-width: 768px) { @content; }}
 @mixin media425 { @media (max-width: 425px) { @content; }}

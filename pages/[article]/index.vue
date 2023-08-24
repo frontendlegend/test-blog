@@ -21,6 +21,10 @@
           v-if="block.type === PageBodyTypes.slider_block"
           :data="(block.data as ArticleSliderDataT)"
         />
+        
+        <SubscribeForm
+          v-if="block.type === PageBodyTypes.subscribe_form_block"
+        />
       </div>
     </div>
   </NuxtLayout>
