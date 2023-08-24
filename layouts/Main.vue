@@ -1,7 +1,9 @@
 <template>
   <div class="layout">
     <header class="header">
-      <SvgLogo />
+      <NuxtLink to="/">
+        <SvgLogo />
+      </NuxtLink>
     </header>
 
     <main class="main">
