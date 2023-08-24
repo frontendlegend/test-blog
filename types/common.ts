@@ -10,14 +10,15 @@ export interface PageT {
   body: {
     type: string | keyof typeof PageBodyTypes
     id: string
-    data: unknown | ArticleListDataT
+    data: unknown | ArticleListDataT | ArticleIntroDataT | ArticleTextDataT
   }[]
 }
 export type PagesT = PageT[]
 
 export enum PageBodyTypes {
   "article_list_block" = "article_list_block",
-  "article_intro_block" = "article_intro_block"
+  "article_intro_block" = "article_intro_block",
+  "text_block" = "text_block",
 }
 
 export interface ArticleListDataT {
@@ -37,3 +38,5 @@ export interface ArticleIntroDataT {
   views_count: number
   short_description: string
 }
+
+export type ArticleTextDataT = string
