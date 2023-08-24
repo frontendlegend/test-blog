@@ -10,12 +10,23 @@
         v-if="articleTextBlock"
         :data="(articleTextBlock.data as ArticleTextDataT)"
       />
+
+      <ArticleImage 
+        v-if="articleImageBlock"
+        :data="(articleImageBlock.data as ArticleImageDataT)"
+      />
     </div>
   </NuxtLayout>
 </template>
 
 <script setup lang="ts">
-  import { ArticleIntroDataT, ArticleTextDataT, PageBodyTypes, PageT } from '../../types/common';
+  import { 
+    ArticleImageDataT, 
+    ArticleIntroDataT, 
+    ArticleTextDataT, 
+    PageBodyTypes, 
+    PageT 
+  } from '../../types/common';
 
   const route = useRoute()
   const article = route.params.article
@@ -23,12 +34,16 @@
   const { data: pageContent } = 
     await useFetch<PageT>(`https://devtwit8.ru/api/v1/page/?path=/${article}`)
 
-  const articleIntroBlock = pageContent.value?.body.find((block, idx) => {
+  const articleIntroBlock = pageContent.value?.body.find(block => {
     return block.type === PageBodyTypes.article_intro_block
   })
 
-  const articleTextBlock = pageContent.value?.body.find((block, idx) => {
+  const articleTextBlock = pageContent.value?.body.find(block => {
     return block.type === PageBodyTypes.text_block
+  })
+
+  const articleImageBlock = pageContent.value?.body.find(block => {
+    return block.type === PageBodyTypes.image_block
   })
 
   useSeoMeta({ 
