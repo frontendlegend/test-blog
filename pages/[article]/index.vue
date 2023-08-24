@@ -25,6 +25,11 @@
         <SubscribeForm
           v-if="block.type === PageBodyTypes.subscribe_form_block"
         />
+
+        <ArticleList
+          v-if="block.type === PageBodyTypes.article_list_block"
+          :data="(block.data as ArticleListDataT)"
+        />
       </div>
     </div>
   </NuxtLayout>
@@ -34,6 +39,7 @@
   import { 
     ArticleImageDataT, 
     ArticleIntroDataT, 
+    ArticleListDataT, 
     ArticleSliderDataT, 
     ArticleTextDataT, 
     PageBodyTypes, 

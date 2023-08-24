@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <img class="img" :src="image" />
-    <h2 class="title">{{ title }}</h2>
+    <h3 class="title">{{ title }}</h3>
     <NuxtLink :to="link">
       <button class="read-btn">Читать</button>
     </NuxtLink>
