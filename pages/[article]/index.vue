@@ -53,5 +53,15 @@
     display: flex;
     flex-direction: column;
     gap: 100px;
+
+    @include media1280 {
+      gap: 80px;
+    }
+    @include media1024 {
+      gap: 60px;
+    }
+    @include media425 {
+      gap: 40px;
+    }
   }
 </style>
