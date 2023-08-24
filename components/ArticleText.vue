@@ -20,14 +20,16 @@ article(class='article-text-block', v-html='html')
     </svg>
   `
 
-  // insert svgQuotes into blockquote tag
-  const html = `
-    ${data.substring(0, data.indexOf('<blockquote>') + '<blockquote>'.length)}
-    ${svgQuotes}
-    <div>
-    ${data.substring(data.indexOf('<blockquote>') + '<blockquote>'.length)}
-    </div>
-  `
+  let html = data
+  if (html.includes('blockquote'))
+    // insert svgQuotes into blockquote tag
+    html = `
+      ${data.substring(0, data.indexOf('<blockquote>') + '<blockquote>'.length)}
+      ${svgQuotes}
+      <div>
+      ${data.substring(data.indexOf('<blockquote>') + '<blockquote>'.length)}
+      </div>
+    `
 </script>
 
 <style lang="scss">
