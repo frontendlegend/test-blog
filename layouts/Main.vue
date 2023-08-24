@@ -1,7 +1,7 @@
 <template>
   <div class="layout">
     <header class="header">
-      <Logo />
+      <SvgLogo />
     </header>
 
     <main class="main">

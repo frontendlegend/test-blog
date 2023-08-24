@@ -1,10 +1,9 @@
 <template>
   <div class="cards">
-    <!-- TODO: responsive, carousel? -->
-    <ArticleListItem 
+    <!-- TODO: display more than 3 articles -->
+    <ArticleCard
       v-for="article in data.articles.filter((item, idx) => idx < 3)"
-      :img-src="article.image"
-      :title="article.title"
+      :data="article"
     />
   </div>
 </template>
@@ -20,7 +19,7 @@
     justify-content: space-between;
     gap: 30px;
 
-    @media (max-width: 1024px) {
+    @include media1024 {
       flex-direction: column;
       align-items: center;
     }

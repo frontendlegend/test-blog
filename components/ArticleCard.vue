@@ -1,13 +1,17 @@
 <template>
   <div class="card">
-    <img class="img" :src="imgSrc" />
+    <img class="img" :src="image" />
     <h2 class="title">{{ title }}</h2>
-    <button class="read-btn">Читать</button>
+    <NuxtLink :to="link">
+      <button class="read-btn">Читать</button>
+    </NuxtLink>
   </div>
 </template>
 
 <script setup lang="ts">
-  const { imgSrc, title } = defineProps<{ imgSrc: string, title: string }>()
+  import { ArticleListDataItemT } from 'types/common';
+  const props = defineProps<{ data: ArticleListDataItemT }>()
+  const { image, title, link } = toRefs(props.data)
 </script>
 
 <style scoped lang="scss">
@@ -21,7 +25,7 @@
       max-height: 320px;
       object-fit: cover;
 
-      @media (max-width: 425px) {
+      @include media425 {
         max-height: 200px;
       }
     }
