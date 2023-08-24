@@ -22,6 +22,7 @@ export enum PageBodyTypes {
   "image_block" = "image_block",
   "slider_block" = "slider_block",
   "subscribe_form_block" = "subscribe_form_block",
+  "cta_form_block" = "cta_form_block",
 }
 
 export interface ArticleListDataT {

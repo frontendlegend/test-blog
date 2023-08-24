@@ -30,6 +30,10 @@
           v-if="block.type === PageBodyTypes.article_list_block"
           :data="(block.data as ArticleListDataT)"
         />
+
+        <CtaForm
+          v-if="block.type === PageBodyTypes.cta_form_block"
+        />
       </div>
     </div>
   </NuxtLayout>
