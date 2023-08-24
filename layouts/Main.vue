@@ -14,6 +14,35 @@
 
     <footer class="footer">
       <div class="container">
+        <div class="info">
+          <div class="about">
+            <NuxtLink to="/">
+              <SvgLogo />
+            </NuxtLink>
+            <p>
+              Cтатьи о дизайне и искусстве, 
+              которые исследуют творческие вдохновения и актуальные тенденции, 
+              раскрывая мир эстетики и креативности
+            </p>
+          </div>
+
+          <div class="links">
+            <div class="email">
+              <p>email</p>
+              <a href="mailto:testblogsupport@gmail.com">
+                testblogsupport@gmail.com
+              </a>
+            </div>
+
+            <div class="social">
+              <SvgFacebook />
+              <SvgVk />
+              <SvgInstagram />
+              <SvgTelegram />
+            </div>
+          </div>
+        </div>
+
         <SubscribeForm />
       </div>
     </footer>
@@ -50,13 +79,61 @@
 
     @include container {
       width: 100%;
-      height: 100px;
       margin-top: auto;
 
-      .subscribe {
-        width: 100%;
-        height: 100%;
-        background: $text;
+      .info {
+        display: flex;
+        justify-content: space-between;
+        margin: 50px 30px 70px;
+
+        @include media768 {
+          flex-direction: column;
+          justify-content: unset;
+          align-items: center;
+        }
+
+        .about {
+          width: 100%;
+          max-width: 426px;
+          margin-bottom: 30px;
+
+          p {
+            margin: 20px 0 0;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 20px;
+            color: $gray;
+          }
+        }
+
+        .links {
+          .email {
+            p {
+              margin: 0 0 2px;
+              font-size: 14px;
+              line-height: 20px;
+              font-weight: 400;
+              color: $gray;
+            }
+            a {
+              font-size: 18px;
+              line-height: 22px;
+              font-weight: 400;
+              color: $text;
+              text-decoration: none;
+
+              &:visited {
+                color: $text;
+              }
+            }
+          }
+
+          .social {
+            display: flex;
+            gap: 20px;
+            margin-top: 24px;
+          }
+        }
       }
     }
   }
