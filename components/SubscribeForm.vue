@@ -1,15 +1,12 @@
-<template>
-  <div class="subscribe-form">
-    <b class="label">Подпишись на рассылку</b>
-
-    <form>
-      <input type="email" class="email-input" placeholder="Email" />
-      <button type="button" class="subscribe-btn">Подписаться</button>
-    </form>
-  </div>
+<template lang="pug">
+div(class="subscribe-form")
+  b(class="label") Подпишись на рассылку
+  form
+    input(type="email", class="email-input", placeholder="Email")
+    button(type="button", class="subscribe-btn") Подписаться
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
   .subscribe-form {
     display: flex;
     align-items: center;
