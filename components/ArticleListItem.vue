@@ -12,11 +12,18 @@
 
 <style scoped lang="scss">
   .card {
-    width: 427px;
+    width: 100%;
+    max-width: 427px;
 
     .img {
       width: 100%;
-      height: 320px;
+      height: 100%;
+      max-height: 320px;
+      object-fit: cover;
+
+      @media (max-width: 425px) {
+        max-height: 200px;
+      }
     }
 
     .title {
@@ -24,6 +31,19 @@
       font-size: 22px;
       font-weight: 800;
       line-height: 30px;
+
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+
+      @supports (-webkit-line-clamp: 2) {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: initial;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+      }
     }
 
     .read-btn {

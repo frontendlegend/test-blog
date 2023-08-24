@@ -42,7 +42,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 332px;
+    min-height: 332px;
     margin-top: auto;
     border-top: 1px solid $gray;
 

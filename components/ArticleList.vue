@@ -18,5 +18,11 @@
   .cards {
     display: flex;
     justify-content: space-between;
+    gap: 30px;
+
+    @media (max-width: 1024px) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 </style>
