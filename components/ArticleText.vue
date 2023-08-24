@@ -26,9 +26,9 @@ article(class='article-text-block', v-html='html')
     html = `
       ${data.substring(0, data.indexOf('<blockquote>') + '<blockquote>'.length)}
       ${svgQuotes}
-      <div>
+      <span>
       ${data.substring(data.indexOf('<blockquote>') + '<blockquote>'.length)}
-      </div>
+      </span>
     `
 </script>
 
@@ -60,7 +60,7 @@ article(class='article-text-block', v-html='html')
         }
       }
 
-      div {
+      & > span {
         p {
           font-style: italic;
           font-weight: 300;
