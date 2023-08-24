@@ -20,6 +20,7 @@ export enum PageBodyTypes {
   "article_intro_block" = "article_intro_block",
   "text_block" = "text_block",
   "image_block" = "image_block",
+  "slider_block" = "slider_block",
 }
 
 export interface ArticleListDataT {
@@ -46,3 +47,5 @@ export interface ArticleImageDataT {
   src: string
   caption: string
 }
+
+export type ArticleSliderDataT = string[]

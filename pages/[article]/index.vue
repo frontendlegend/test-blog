@@ -16,6 +16,11 @@
           v-if="block.type === PageBodyTypes.image_block"
           :data="(block.data as ArticleImageDataT)"
         />
+
+        <ArticleSlider
+          v-if="block.type === PageBodyTypes.slider_block"
+          :data="(block.data as ArticleSliderDataT)"
+        />
       </div>
     </div>
   </NuxtLayout>
@@ -25,6 +30,7 @@
   import { 
     ArticleImageDataT, 
     ArticleIntroDataT, 
+    ArticleSliderDataT, 
     ArticleTextDataT, 
     PageBodyTypes, 
     PageT 
