@@ -1,8 +1,7 @@
 <template>
   <div class="cards">
-    <!-- TODO: display more than 3 articles -->
     <Card
-      v-for="article in data.articles.filter((item, idx) => idx < 3)"
+      v-for="article in data.articles"
       :data="article"
     />
   </div>
@@ -15,11 +14,13 @@
 
 <style scoped lang="scss">
   .cards {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     justify-content: space-between;
     gap: 30px;
 
     @include media1024 {
+      display: flex;
       flex-direction: column;
       align-items: center;
     }
