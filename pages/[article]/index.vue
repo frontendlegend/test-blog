@@ -40,6 +40,7 @@
 </template>
 
 <script setup lang="ts">
+  import { usePagesStore } from '../../store/pages';
   import { 
     ArticleImageDataT, 
     ArticleIntroDataT, 
@@ -47,18 +48,18 @@
     ArticleSliderDataT, 
     ArticleTextDataT, 
     PageBodyTypes, 
-    PageT 
   } from '../../types/common';
 
   const route = useRoute()
   const article = route.params.article
 
-  const { data: pageContent } = 
-    await useFetch<PageT>(`https://devtwit8.ru/api/v1/page/?path=/${article}`)
+  const store = usePagesStore()
+  const { fetchPage } = store
+  const pageContent = await fetchPage(`/${article}`)
 
   useSeoMeta({ 
-    title: pageContent.value?.meta.title,
-    description: pageContent.value?.meta.description
+    title: pageContent?.meta.title,
+    description: pageContent?.meta.description
   })
 </script>
 

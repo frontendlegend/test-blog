@@ -8,17 +8,19 @@
 </template>
 
 <script setup lang="ts">
-  import { PageT, PageBodyTypes, ArticleListDataT } from '../types/common';
+  import { usePagesStore } from '../store/pages';
+  import { PageBodyTypes, ArticleListDataT } from '../types/common';
 
-  const { data: pageContent } = 
-    await useFetch<PageT>('https://devtwit8.ru/api/v1/page/?path=/')
+  const store = usePagesStore()
+  const { fetchPage } = store
+  const pageContent = await fetchPage('/')
 
-  const articleListBlock = pageContent.value?.body.find((block, idx) => {
+  const articleListBlock = pageContent?.body.find((block, idx) => {
     return block.type === PageBodyTypes.article_list_block
   })
 
   useSeoMeta({ 
-    title: pageContent.value?.meta.title,
-    description: pageContent.value?.meta.description
+    title: pageContent?.meta.title,
+    description: pageContent?.meta.description
   })
 </script>
