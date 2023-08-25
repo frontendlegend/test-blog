@@ -1,9 +1,9 @@
 <template>
   <div class="card">
-    <img class="img" :src="image" />
-    <h3 class="title">{{ title }}</h3>
+    <img class="card__img" :src="image" />
+    <h3 class="card__title">{{ title }}</h3>
     <NuxtLink :to="link">
-      <button class="read-btn">Читать</button>
+      <button class="card__read-button">Читать</button>
     </NuxtLink>
   </div>
 </template>
@@ -19,7 +19,7 @@
     width: 100%;
     max-width: 427px;
 
-    .img {
+    &__img {
       width: 100%;
       height: 100%;
       max-height: 320px;
@@ -30,7 +30,7 @@
       }
     }
 
-    .title {
+    &__title {
       margin: 20px 0 30px;
       font-size: 22px;
       font-weight: 800;
@@ -50,7 +50,7 @@
       }
     }
 
-    .read-btn {
+    &__read-button {
       width: 164px;
       height: 46px;
       

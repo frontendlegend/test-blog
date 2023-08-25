@@ -1,18 +1,18 @@
 <template>
-  <div class="intro">
-    <img class="img" :src="data.image" />
+  <div class="article-intro">
+    <img class="article-intro__image" :src="data.image" />
 
-    <article class="article">
-      <h1 class="title" v-text="title" />
-      <p class="read-time">
+    <article class="article-intro__text">
+      <h1 class="article-intro__text__title" v-text="title" />
+      <p class="article-intro__text__read-time">
         <SvgReadTime />
         <span>{{ reading_time }} мин время прочтения</span>
       </p>
-      <p class="view-count">
+      <p class="article-intro__text__view-count">
         <SvgViewsCount />
         <span>{{ views_count }} прочитали статью</span>
       </p>
-      <p class="description" v-text="short_description" />
+      <p class="article-intro__text__description" v-text="short_description" />
     </article>
   </div>
 </template>
@@ -26,7 +26,7 @@
 </script>
 
 <style scoped lang="scss">
-  .intro {
+  .article-intro {
     display: flex;
     align-items: center;
     gap: 30px;
@@ -34,75 +34,75 @@
     @include media1024 {
       flex-direction: column;
     }
-  }
 
-  .img {
-    width: 100%;
-    max-width: 541px;
-    height: 100%;
-    max-height: 580px;
-    border-radius: 2px 220px 2px 2px;
-    object-fit: cover;
-
-    @include media1280 {
-      max-width: 450px;
-    }
-    @include media1024 {
-      max-width: unset;
-      max-height: 400px;
-    }
-  }
-
-  .article {
-    .title {
-      margin: 0 0 30px;
-      font-size: 56px;
-      line-height: 66px;
+    &__image {
+      width: 100%;
+      max-width: 541px;
+      height: 100%;
+      max-height: 580px;
+      border-radius: 2px 220px 2px 2px;
+      object-fit: cover;
 
       @include media1280 {
-        margin: 0 0 25px;
-        font-size: 45px;
-        line-height: unset;
+        max-width: 450px;
       }
       @include media1024 {
-        margin: 0 0 15px;
-        font-size: 40px;
-        line-height: unset;
-      }
-      @include media425 {
-        font-size: 30px;
+        max-width: unset;
+        max-height: 400px;
       }
     }
 
-    .read-time, .view-count {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin: 0;
+    &__text {
+      &__title {
+        margin: 0 0 30px;
+        font-size: 56px;
+        line-height: 66px;
 
-      font-size: 14px;
-      line-height: 20px;
-      color: $gray;
-    }
-
-    .view-count {
-      margin: 4px 0 50px;
-
-      @include media1280 {
-        margin: 4px 0 35px;
+        @include media1280 {
+          margin: 0 0 25px;
+          font-size: 45px;
+          line-height: unset;
+        }
+        @include media1024 {
+          margin: 0 0 15px;
+          font-size: 40px;
+          line-height: unset;
+        }
+        @include media425 {
+          font-size: 30px;
+        }
       }
-      @include media1024 {
-        margin: 4px 0 25px;
+
+      &__read-time, &__view-count {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin: 0;
+
+        font-size: 14px;
+        line-height: 20px;
+        color: $gray;
       }
-    }
 
-    .description {
-      font-size: 18px;
-      line-height: 26px;
+      &__view-count {
+        margin: 4px 0 50px;
 
-      @include media1280 {
-        font-size: 16px;
-        line-height: unset;
+        @include media1280 {
+          margin: 4px 0 35px;
+        }
+        @include media1024 {
+          margin: 4px 0 25px;
+        }
+      }
+
+      &__description {
+        font-size: 18px;
+        line-height: 26px;
+
+        @include media1280 {
+          font-size: 16px;
+          line-height: unset;
+        }
       }
     }
   }

@@ -1,7 +1,7 @@
 <template>
   <NuxtLayout name="main">
     <div class="article">
-      <div class="article-block" v-for="block in pageContent?.body">
+      <div class="article__block" v-for="block in pageContent?.body">
         <ArticleIntro 
           v-if="block.type === PageBodyTypes.article_intro_block"
           :data="(block.data as ArticleIntroDataT)"

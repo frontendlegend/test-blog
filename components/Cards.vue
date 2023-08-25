@@ -1,7 +1,7 @@
 <template>
   <div class="cards">
     <!-- TODO: display more than 3 articles -->
-    <ArticleCard
+    <Card
       v-for="article in data.articles.filter((item, idx) => idx < 3)"
       :data="article"
     />

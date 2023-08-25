@@ -14,27 +14,30 @@
 
     <footer class="footer">
       <div class="container">
-        <div class="info">
-          <div class="about">
+        <div class="footer__info">
+          <div class="about-us">
             <NuxtLink to="/">
               <SvgLogo />
             </NuxtLink>
-            <p>
+            <p class="about-us__text">
               Cтатьи о дизайне и искусстве, 
               которые исследуют творческие вдохновения и актуальные тенденции, 
               раскрывая мир эстетики и креативности
             </p>
           </div>
 
-          <div class="links">
-            <div class="email">
-              <p>email</p>
-              <a href="mailto:testblogsupport@gmail.com">
+          <div class="contacts">
+            <div class="contacts__email">
+              <p class="contacts__email__label">email</p>
+              <a 
+                class="contacts__email__link" 
+                href="mailto:testblogsupport@gmail.com"
+              >
                 testblogsupport@gmail.com
               </a>
             </div>
 
-            <div class="social">
+            <div class="contacts__social">
               <SvgFacebook />
               <SvgVk />
               <SvgInstagram />
@@ -81,7 +84,7 @@
       width: 100%;
       margin-top: auto;
 
-      .info {
+      .footer__info {
         display: flex;
         justify-content: space-between;
         margin: 50px 30px 70px;
@@ -92,12 +95,12 @@
           align-items: center;
         }
 
-        .about {
+        .about-us {
           width: 100%;
           max-width: 426px;
           margin-bottom: 30px;
 
-          p {
+          &__text {
             margin: 20px 0 0;
             font-size: 14px;
             font-weight: 400;
@@ -106,16 +109,16 @@
           }
         }
 
-        .links {
-          .email {
-            p {
+        .contacts {
+          &__email {
+            &__label {
               margin: 0 0 2px;
               font-size: 14px;
               line-height: 20px;
               font-weight: 400;
               color: $gray;
             }
-            a {
+            &__link {
               font-size: 18px;
               line-height: 22px;
               font-weight: 400;
@@ -128,7 +131,7 @@
             }
           }
 
-          .social {
+          &__social {
             display: flex;
             gap: 20px;
             margin-top: 24px;

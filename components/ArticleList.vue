@@ -1,7 +1,7 @@
 <template>
   <div class="article-list">
-    <h2 class="title">Похожие статьи</h2>
-    <ArticleCards :data="data" />
+    <h2 class="article-list__title">Похожие статьи</h2>
+    <Cards :data="data" />
   </div>
 </template>
 
@@ -12,7 +12,7 @@
 
 <style scoped lang="scss">
   .article-list {
-    .title {
+    &__title {
       margin: 0 0 50px;
       font-size: 34px;
       line-height: 46px;

@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout name="main">
-    <ArticleCards
+    <Cards
       v-if="articleListBlock" 
       :data="(articleListBlock.data as ArticleListDataT)" 
     />

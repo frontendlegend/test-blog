@@ -1,7 +1,7 @@
 <template lang="pug">
 div(class="subscribe-form")
-  b(class="label") Подпишись на рассылку
-  form
+  b(class="subscribe-form__label") Подпишись на рассылку
+  form(class="subscribe-form__form")
     input(type="email", class="input", placeholder="Email")
     button(type="button", class="subscribe-button") Подписаться
 </template>
@@ -27,7 +27,7 @@ div(class="subscribe-form")
       padding: 15px;
     }
 
-    .label {
+    &__label {
       font-size: 22px;
       line-height: 30px;
       font-weight: 800;
@@ -38,7 +38,7 @@ div(class="subscribe-form")
       }
     }
 
-    form {
+    &__form {
       display: flex;
       align-items: center;
       gap: 37px;

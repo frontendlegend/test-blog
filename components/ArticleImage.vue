@@ -1,7 +1,7 @@
 <template lang="pug">
-div(class="article-image-block") 
-  img(:src="src")
-  span(:class="caption", v-text="caption")
+div(class="article-image") 
+  img(class="article-image__image", :src="src")
+  span(class="article-image__caption", v-text="caption")
 </template>
 
 <script setup lang="ts">
@@ -12,8 +12,8 @@ div(class="article-image-block")
 </script>
 
 <style lang="scss">
-  .article-image-block {
-    img {
+  .article-image {
+    &__image {
       width: 100%;
       max-width: 1340px;
       height: 100%;
@@ -21,7 +21,7 @@ div(class="article-image-block")
       border-radius: 2px 220px 2px 2px;
     }
 
-    .caption {
+    &__caption {
       display: block;
       width: fit-content;
       margin-left: auto;

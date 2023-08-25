@@ -1,9 +1,9 @@
 <template lang="pug">
 div(class="cta-form")
-  img(src="/img/cta-form.png")
-  form
-    h2 Стань участником проекта
-    div(class="inputs")
+  img(class="cta-form__image", src="/img/cta-form.png")
+  form(class="form")
+    h2(class="form__title") Стань участником проекта
+    div(class="form__inputs")
       input(type="text", class="input", placeholder="Имя")
       input(type="tel", class="input", placeholder="Телефон")
       input(type="email", class="input", placeholder="Email")
@@ -32,7 +32,7 @@ div(class="cta-form")
       padding: 30px;
     }
 
-    img {
+    &__image {
       width: 100%;
       max-width: 595px;
       height: 328px;
@@ -49,13 +49,13 @@ div(class="cta-form")
       }
     }
     
-    form {
+    .form {
       display: flex;
       justify-content: space-between;
       flex-direction: column;
       gap: 50px;
 
-      h2 {
+      &__title {
         margin: 0;
         font-size: 34px;
         font-weight: 800;
@@ -68,7 +68,7 @@ div(class="cta-form")
         }
       }
 
-      .inputs {
+      &__inputs {
         display: flex;
         flex-direction: column;
         gap: 25px;

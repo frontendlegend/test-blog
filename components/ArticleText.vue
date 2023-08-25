@@ -1,5 +1,5 @@
 <template lang="pug">
-article(class='article-text-block', v-html='html')
+article(class='article-text', v-html='html')
 </template>
 
 <script setup lang="ts">
@@ -33,7 +33,7 @@ article(class='article-text-block', v-html='html')
 </script>
 
 <style lang="scss">
-  .article-text-block {
+  .article-text {
     width: 100%;
     max-width: 884px;
     margin: 0 auto;
