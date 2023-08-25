@@ -72,5 +72,27 @@ article(class='article-text', v-html='html')
         }
       }
     }
+
+    ul {
+      width: fit-content;
+      margin: 0 auto;
+      list-style: none;
+
+      li {
+        position: relative;
+
+        &:after {
+          content: '';
+          display: block;
+          width: 7px;
+          height: 7px;
+          background: $text;
+          transform: rotate(45deg);
+          position: absolute;
+          top: 7px;
+          left: -19px;
+        }
+      }
+    }
   }
 </style>

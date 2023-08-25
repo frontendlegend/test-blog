@@ -98,11 +98,6 @@
       &__description {
         font-size: 18px;
         line-height: 26px;
-
-        @include media1280 {
-          font-size: 16px;
-          line-height: unset;
-        }
       }
     }
   }
